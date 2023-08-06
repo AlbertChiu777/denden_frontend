@@ -20,16 +20,6 @@
   </header>
 </template>
 
-<script lang="ts">
-export default defineNuxtComponent({
-  head() {
-    return {
-      title: 'DenDen',
-    }
-  },
-})
-</script>
-
 <style lang="sass" scoped>
 header
   backdrop-filter: blur(5px)

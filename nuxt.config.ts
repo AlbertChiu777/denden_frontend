@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
@@ -23,6 +24,7 @@ export default defineNuxtConfig({
         iso: 'en'
       },
     ],
+    rootRedirect: 'zh-hant',
   },
   routeRules: {
     '/': { redirect: '/zh-hant' },
@@ -35,7 +37,7 @@ export default defineNuxtConfig({
     preset: 'github-pages',
     prerender: {
       crawlLinks: true,
-      failOnError: false, 
+      failOnError: false,
     },
   },
 })
