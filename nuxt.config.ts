@@ -33,6 +33,7 @@ export default defineNuxtConfig({
   ],
   nitro: {
     preset: 'github-pages',
+    baseURL: 'https://albertchiu777.github.io/denden_frontend/',
     prerender: {
       crawlLinks: true,
       failOnError: false, 
