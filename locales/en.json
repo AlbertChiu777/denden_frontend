@@ -1,5 +1,9 @@
 {
   "html_title": "DenDen",
+  "first": {
+    "title": "A BEV Charging & Spots AI Navigator",
+    "sub_title": "We aim to provide a simple and convenient solution that allows users to search, reserve, and rate charging stations online and solve the charging anxiety of new energy vehicle owners through our charging station map app."
+  },
   "whats": {
     "nav": "What's DenDen?",
     "first": {

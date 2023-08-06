@@ -8,8 +8,8 @@
         <span class="text-white font-Smiley text-[58px] md:text-[74px]">的好夥伴</span>
       </div>
       <div class="mt-[72px]">
-        <span class="text-[20px] text-[#00FFFD] font-Roboto font-black">電車出行規劃＆吃喝玩樂一次搞定</span>
-        <p class="text-white mt-[14px]">解決電車車主的充電焦慮，由電電官方“實地驗證”站點，提供您充電不焦慮、優惠天天有的小確幸。</p>
+        <span class="text-[20px] text-[#00FFFD] font-Roboto font-black">{{ $t('first.title') }}</span>
+        <p class="text-white mt-[14px]">{{ $t('first.sub_title') }}</p>
       </div>
     </section>
     <div class="bg-img"></div>
