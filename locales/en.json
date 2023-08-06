@@ -1,0 +1,36 @@
+{
+  "html_title": "DenDen",
+  "whats": {
+    "nav": "What's DenDen?",
+    "first": {
+      "title": "Peace of Mind + Accuracy",
+      "content": "Through the AI engine - SmartLynx™, we assist customers in planning optimal charging station locations, alleviating range anxiety for electric vehicle users."
+    },
+    "second": {
+      "title": "Intelligent + Accuracy",
+      "content": "No more searching through articles. With our AI engine - SmartLynx™, we help customers collect the latest charging/parking site promotions across Taiwan, making it smarter, more accurate, and more cost-effective to find charging stations."
+    },
+    "third": {
+      "title": "Vacancies searching + Accuracy",
+      "content": "While you stay comfortably in your car, available charging spots come to you. Stay one step ahead with our self-developed 5G IoT device - TENSO™, seizing charging opportunities in advance."
+    }
+  },
+  "news": {
+    "nav": "News",
+    "title": "What are you still waiting for? ",
+    "sub_title": "Quickly leave your information and get priority access to the “DenDen“ Charging & Spots AI Navigator.",
+    "cta": "3步填問卷"
+  },
+  "join": {
+    "nav": "Join us",
+    "title": "Join us",
+    "sub_title": "Accelerate sustainable future by going electric! Don't hesitate , send us your resume !Let's sail on the great journey with “DenDen“!"
+  },
+  "about": {
+    "nav": "About us",
+    "phase1": "We were endorsed by the Taipei City Government's Industry Development Bureau - TESLA New Energy Startup Base. The team members have previously worked at world-renowned companies, including Fortune 500 company China's Alibaba Group, Japan's Rakuten, Taiwan's ASUS Computers, and Xiaomi's ecological chain company - Runmi Technology.",
+    "phase2": "They have extensive experience in creating multiple APPs and IoT products from scratch. As of now, our products have garnered over 2 billion users worldwide, who have directly or indirectly utilized the products we have developed.",
+    "cta": "Contact us"
+  }
+
+}
