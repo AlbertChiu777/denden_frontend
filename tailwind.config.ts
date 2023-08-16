@@ -11,7 +11,7 @@ export default <Partial<Config>>{
         'Inter': '"Inter"',
       },
       screens: {
-        xxs: '479px',
+        xxs: '428px',
         sm: '767px',
         md: '991px',
         lg: '1199px',

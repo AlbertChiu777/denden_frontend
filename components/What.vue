@@ -1,15 +1,14 @@
 <template>
-  <section class="pt-[177px] mt-[-177px] px-[10px] w-full max-w-[1440px] mx-auto" id="whatis">
+  <section :class="`${locale === 'EN' ? 'en' : ''} pt-[177px] mt-[-177px] px-[10px] w-full max-w-[1440px] mx-auto`" id="whatis">
     <div ref="first" class="mt-[10px] flex flex-row gap-[10px] flex-wrap justify-center">
-      <div class="flex flex-col justify-between w-[404px] sm:w-[546px] h-[513px] sm:h-[420px] pt-[36px] pb-[60px] px-[48px] sm:p-[60px] rounded-[60px] bg-white">
+      <div class="flex flex-col justify-between w-[404px] sm:w-[546px] sm:h-[420px] pt-[36px] pb-[60px] px-[48px] sm:p-[60px] rounded-[60px] bg-white">
         <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-[30px]">
           <img class="w-[95px] h-[80px]" src="/time.svg" alt="Time">
           <div class="flex flex-col space-y-[12px]">
-            <p class="text-[42px] font-bold font-Roboto-Flex">{{ $t('whats.first.title') }}</p>
-            <p class="text-[20px] font-bold font-Roboto-Flex">精準的充電站地圖APP</p>
+            <p class="title">{{ $t('whats.first.title') }}</p>
           </div>
         </div>
-        <p class="text-[20px] leading-[36px] font-Roboto">{{ $t('whats.first.content') }}</p>
+        <p class="mt-[50px] sm:mt-0 text-[20px] leading-[36px] font-Roboto">{{ $t('whats.first.content') }}</p>
       </div>
       <img class="object-cover w-[404px] sm:w-[858px] h-[240px] sm:h-[420px] rounded-[60px]" src="/image1.png" alt="">
       <!-- <video class="object-cover w-[404px] sm:w-[858px] h-[240px] sm:h-[420px] rounded-[60px]" autoplay loop muted>
@@ -24,15 +23,14 @@
         <source src="/test.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video> -->
-      <div class="flex flex-col justify-between w-[404px] sm:w-[546px] h-[513px] sm:h-[420px] pt-[36px] pb-[60px] px-[48px] sm:p-[60px] rounded-[60px] bg-white">
+      <div class="flex flex-col justify-between w-[404px] sm:w-[546px] sm:h-[420px] pt-[36px] pb-[60px] px-[48px] sm:p-[60px] rounded-[60px] bg-white">
         <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-[30px]">
-          <img class="w-[95px] h-[80px]" src="/bonus.svg" alt="Bonus">
+          <img class="w-[95px] h-[80px]" src="/location.svg" alt="Bonus">
           <div class="flex flex-col space-y-[12px]">
-            <p class="text-[42px] font-bold font-Roboto-Flex">{{ $t('whats.second.title') }}</p>
-            <p class="text-[20px] font-bold font-Roboto-Flex">精準的充電站地圖APP</p>
+            <p class="title">{{ $t('whats.second.title') }}</p>
           </div>
         </div>
-        <p class="text-[20px] leading-[36px] font-Roboto">{{ $t('whats.second.content') }}</p>
+        <p class="mt-[50px] sm:mt-[24px] text-[20px] leading-[36px] font-Roboto">{{ $t('whats.second.content') }}</p>
       </div>
       <img class="xl:hidden object-cover w-[404px] sm:w-[858px] h-[240px] sm:h-[420px] rounded-[60px]" src="/image2.png" alt="">
       <!-- <video class="object-cover xl:hidden w-[404px] sm:w-[858px] h-[240px] sm:h-[420px] rounded-[60px]" autoplay loop muted>
@@ -42,15 +40,14 @@
     </div>
 
     <div ref="third" class="mt-[10px] flex flex-row gap-[10px] flex-wrap justify-center">
-      <div class="flex flex-col justify-between w-[404px] sm:w-[546px] h-[513px] sm:h-[420px] pt-[36px] pb-[60px] px-[48px] sm:p-[60px] rounded-[60px] bg-white">
+      <div class="flex flex-col justify-between w-[404px] sm:w-[546px] sm:h-[420px] pt-[36px] pb-[60px] px-[48px] sm:p-[60px] rounded-[60px] bg-white">
         <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-[30px]">
-          <img class="w-[95px] h-[80px]" src="/location.svg" alt="Location">
+          <img class="w-[95px] h-[80px]" src="/bonus.svg" alt="Location">
           <div class="flex flex-col space-y-[12px]">
-              <p class="text-[42px] font-bold font-Roboto-Flex">{{ $t('whats.third.title') }}</p>
-              <p class="text-[20px] font-bold font-Roboto-Flex">精準的充電站地圖APP</p>
+              <p class="title sm:w-[377px]">{{ $t('whats.third.title') }}</p>
           </div>
         </div>
-        <p class="text-[20px] leading-[36px] font-Roboto">{{ $t('whats.third.content') }}</p>
+        <p class="mt-[50px] sm:mt-0 text-[20px] leading-[36px] font-Roboto">{{ $t('whats.third.content') }}</p>
       </div>
       <img class="object-cover w-[404px] sm:w-[858px] h-[240px] sm:h-[420px] rounded-[60px]" src="/image3.png" alt="">
       <!-- <video class="object-cover w-[404px] sm:w-[858px] h-[240px] sm:h-[420px] rounded-[60px]" autoplay loop muted>
@@ -67,6 +64,7 @@
 <script lang="ts">
 export default defineNuxtComponent({
   setup() {
+    const { locale } = useI18n()
     const first = ref(null)
     const second = ref(null)
     const third = ref(null)
@@ -95,7 +93,17 @@ export default defineNuxtComponent({
       first,
       second,
       third,
+      locale
     }
   },
 })
 </script>
+
+<style lang="sass" scoped>
+p.title
+  @apply text-[42px] font-bold font-Roboto-Flex leading-tight
+.en 
+  p.title
+    @apply text-[36px]
+
+</style>
