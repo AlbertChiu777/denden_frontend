@@ -6,12 +6,16 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deployToFirebase": "pnpm build && npx firebase-tools deploy"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/i18n": "8.0.0-rc.2",
     "@types/node": "^18.17.1",
+    "firebase-admin": "^11.10.1",
+    "firebase-functions": "^4.4.1",
+    "firebase-functions-test": "^3.1.0",
     "nuxt": "^3.6.5",
     "sass": "^1.64.2"
   },
