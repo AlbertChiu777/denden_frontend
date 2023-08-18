@@ -1,6 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: false,
+  app: {
+    head: {
+      title: 'DenDen Map',
+      meta: [
+        {
+          'name': 'viewport',
+          'content': 'width=device-width, initial-scale=1'
+        },
+        {
+          'charset': 'utf-8'
+        },
+        {
+          name: 'description',
+          content: 'A BEV Charging & Spots AI Navigator'
+        },
+      ],
+    }
+  },
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
@@ -34,7 +51,7 @@ export default defineNuxtConfig({
     'animate.css/animate.min.css'
   ],
   nitro: {
-    preset: 'github-pages',
+    preset: 'firebase',
     prerender: {
       crawlLinks: true,
       failOnError: false,
