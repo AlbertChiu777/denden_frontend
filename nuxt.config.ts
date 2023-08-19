@@ -15,6 +15,50 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'A BEV Charging & Spots AI Navigator'
         },
+        {
+          property: 'og:title',
+          content: 'DenDen Map',
+        },
+        {
+          property: 'og:url',
+          content: 'https://www.den-den.app/',
+        },
+        {
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          property: 'og:description',
+          content: 'A BEV Charging & Spots AI Navigator',
+        },
+        {
+          property: 'og:image',
+          content: 'https://www.den-den.app/image1.png',
+        },
+        {
+          property: 'og:image:width',
+          content: '2574',
+        },
+        {
+          property: 'og:image:height',
+          content: '1260',
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary',
+        },
+        {
+          name: 'twitter:description',
+          content: 'A BEV Charging & Spots AI Navigator',
+        },
+        {
+          name: 'twitter:title',
+          content: 'DenDen Map',
+        },
+        {
+          name: 'twitter:image',
+          content: 'https://www.den-den.app/logo.png',
+        },
       ],
     }
   },
