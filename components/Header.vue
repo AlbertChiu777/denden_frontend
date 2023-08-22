@@ -36,6 +36,9 @@
       <li class="py-[20px] pl-[10px]">
         <a class="text-[20px] leading-[36px] text-black font-Roboto" href="#about" @click="isOpen = false">{{ $t('about.nav') }}</a>
       </li>
+      <li class="py-[20px] pl-[10px]">
+        <a class="text-[20px] leading-[36px] text-black font-Roboto" :href="locale === 'EN' ? '/zh-hant' : '/en'" @click="isOpen = false">{{ $t('about.changeLang') }}</a>
+      </li>
     </ul>
   </header>
 </template>
@@ -45,6 +48,7 @@ export default defineNuxtComponent({
   setup() {
     const isOpen = useSidebarOpen()
     const sidebar = ref(null)
+    const { locale } = useI18n()
     onMounted(() => {
     })
 
@@ -57,7 +61,8 @@ export default defineNuxtComponent({
     return {
       sidebar,
       isOpen,
-      handleHamburgerClick
+      handleHamburgerClick,
+      locale
     }
   },
 })

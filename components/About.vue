@@ -10,10 +10,16 @@
         {{ $t('about.phase2') }}
       </p>
 
-      <div @click="handleClick" class="flex flex-col items-center mt-[56px] sm:mt-[140px] cursor-pointer">
+      <div class="flex flex-col items-center mt-[56px] sm:mt-[140px] cursor-pointer">
         <div class="contact"><span class="text-[20px] leading-[20px] font-extrabold text-[#0A5BE2] mb-[10px]">{{ $t('about.cta') }}</span></div>
-        <img class="w-[74px] h-[74px] mt-[16px]" src="/fb.svg" alt="FB">
-        <p class="text-white text-[24px] leading-[24px] font-black">電電-DenDen</p>
+        <div class="flex flex-row items-center space-x-[10px]">
+          <img @click="() => {handleClick('fb')}" class="w-[74px] h-[74px] mt-[16px]" src="/fb.svg" alt="FB">
+          <img @click="() => {handleClick('linkedin')}" class="w-[74px] h-[74px] mt-[16px]" src="/linkedin.svg" alt="Linkedin">
+          <a href="mailto:wen.c@den-den.app">
+            <img class="w-[74px] h-[74px] mt-[16px]" src="/mail.svg" alt="Mail us">
+          </a>
+        </div>
+        <p class="text-white text-[24px] leading-[24px] font-black mt-[30px]">電電-DenDen</p>
       </div>
     </div>
   </section>
@@ -26,8 +32,15 @@
 export default defineNuxtComponent({
   setup() {
     const { locale } = useI18n()
-    const handleClick = () => {
-      window.open('https://www.facebook.com/aDenDenApp', '_blank')
+    const handleClick = (media: string) => {
+      switch(media) {
+        case 'fb':
+          return window.open('https://www.facebook.com/aDenDenApp', '_blank')
+        case 'linkedin':
+          window.open('https://www.linkedin.com/company/96166277/admin/feed/posts/', '_blank')
+        default:
+          return null
+      }
     }
     return {
       handleClick,

@@ -6,7 +6,8 @@
           $t('join.title') }}</p>
         <p class="max-w-[300px] sm:max-w-none text-[22px] leading-[36px] xxs:text-[30px] xxs:leading-[48px] sm:leading-[42px] font-Roboto mt-[27px]">{{
           $t('join.sub_title') }}</p>
-        <a class="whitespace-nowrap mt-[42px] inline-block rounded-[80px] bg-[#00FFFD] px-[50px] py-[27px] text-[22px] leading-[28px] xxs:text-[27px] xxs:leading-[32px] font-black " href="mailto:wen.c@den-den.app">wen.c@den-den.app</a>
+        <a class="whitespace-nowrap mt-[42px] inline-block rounded-[80px] bg-[#00FFFD] px-[50px] py-[27px] text-[22px] leading-[28px] xxs:text-[27px] xxs:leading-[32px] font-black " href="https://www.cakeresume.com/companies/den-den-app">{{
+          $t('join.cta') }}</a>
       </div>
     </div>
   </section>

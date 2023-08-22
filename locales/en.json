@@ -28,13 +28,15 @@
   "join": {
     "nav": "Join us",
     "title": "Join us",
-    "sub_title": "Accelerate sustainable future by going electric! Don't hesitate , send us your resume !Let's sail on the great journey with “DenDen“!"
+    "sub_title": "Accelerate sustainable future by going electric! Don't hesitate , send us your resume !Let's sail on the great journey with “DenDen“!",
+    "cta": "Job Opportunities "
   },
   "about": {
     "nav": "About us",
     "phase1": "We were endorsed by the Taipei City Government's Industry Development Bureau - TESLA New Energy Startup Base. The team members have previously worked at world-renowned companies, including Fortune 500 company China's Alibaba Group, Japan's Rakuten, Taiwan's ASUS Computers, and Xiaomi's ecological chain company - Runmi Technology.",
     "phase2": "They have extensive experience in creating multiple APPs and IoT products from scratch. As of now, our products have garnered over 2 billion users worldwide, who have directly or indirectly utilized the products we have developed.",
-    "cta": "Contact us"
+    "cta": "Contact us",
+    "changeLang": "繁中/EN"
   }
 
 }
