@@ -4,19 +4,19 @@
       <a href="#"><img src="/logo.png" alt="DenDen_Logo" class="w-[87px] h-[45px] md:w-[109px] md:h-[57px]"></a>
       <ul class="flex-row items-center space-x-[80px] hidden md:flex">
         <li>
-          <a class="text-[22px] text-white font-Inter" href="#whatis">{{ $t('whats.nav') }}</a>
+          <a :class="`${textColor} text-[22px] font-Inter`" :href="`${localePath('/').toLocaleLowerCase()}#whatis`">{{ $t('whats.nav') }}</a>
         </li>
         <li>
-          <a class="text-[22px] text-white font-Inter" href="#news">{{ $t('news.nav') }}</a>
+          <a :class="`${textColor} text-[22px] font-Inter`" :href="`${localePath('/').toLocaleLowerCase()}#news`">{{ $t('news.nav') }}</a>
         </li>
         <li>
-          <a class="text-[22px] text-white font-Inter" href="#join">{{ $t('join.nav') }}</a>
+          <a :class="`${textColor} text-[22px] font-Inter`" :href="`${localePath('/').toLocaleLowerCase()}#join`">{{ $t('join.nav') }}</a>
         </li>
         <li>
-          <a class="text-[22px] text-white font-Inter" href="#about">{{ $t('about.nav') }}</a>
+          <a :class="`${textColor} text-[22px] font-Inter`" :href="`${localePath('/').toLocaleLowerCase()}#about`">{{ $t('about.nav') }}</a>
         </li>
         <li>
-          <a class="text-[22px] text-white font-Inter" :href="locale === 'EN' ? '/zh-hant' : '/en'">{{ $t('about.changeLang') }}</a>
+          <a :class="`${textColor} text-[22px] font-Inter cursor-pointer`" @click="changeLocalePath">{{ $t('about.changeLang') }}</a>
         </li>
       </ul>
       <div class="block md:hidden w-[24px] h-[24px] cursor-pointer" @click="handleHamburgerClick">
@@ -28,19 +28,19 @@
         <img class="w-[26px] h-[17px] cursor-pointer" src="/go.svg" alt="Back" @click="isOpen = false">
       </li>
       <li class="py-[20px] pl-[10px]">
-        <a class="text-[20px] leading-[36px] text-black font-Roboto" href="#whatis" @click="isOpen = false">{{ $t('whats.nav') }}</a>
+        <a class="text-[20px] leading-[36px] text-black font-Roboto" :href="`${localePath('/').toLocaleLowerCase()}#whatis`" @click="isOpen = false">{{ $t('whats.nav') }}</a>
       </li>
       <li class="py-[20px] pl-[10px]">
-        <a class="text-[20px] leading-[36px] text-black font-Roboto" href="#news" @click="isOpen = false">{{ $t('news.nav') }}</a>
+        <a class="text-[20px] leading-[36px] text-black font-Roboto" :href="`${localePath('/').toLocaleLowerCase()}#news`" @click="isOpen = false">{{ $t('news.nav') }}</a>
       </li>
       <li class="py-[20px] pl-[10px]">
-        <a class="text-[20px] leading-[36px] text-black font-Roboto" href="#join" @click="isOpen = false">{{ $t('join.nav') }}</a>
+        <a class="text-[20px] leading-[36px] text-black font-Roboto" :href="`${localePath('/').toLocaleLowerCase()}#join`" @click="isOpen = false">{{ $t('join.nav') }}</a>
       </li>
       <li class="py-[20px] pl-[10px]">
-        <a class="text-[20px] leading-[36px] text-black font-Roboto" href="#about" @click="isOpen = false">{{ $t('about.nav') }}</a>
+        <a class="text-[20px] leading-[36px] text-black font-Roboto" :href="`${localePath('/').toLocaleLowerCase()}#about`" @click="isOpen = false">{{ $t('about.nav') }}</a>
       </li>
       <li class="py-[20px] pl-[10px]">
-        <a class="text-[20px] leading-[36px] text-black font-Roboto" :href="locale === 'EN' ? '/zh-hant' : '/en'" @click="isOpen = false">繁中/EN</a>
+        <a class="text-[20px] leading-[36px] text-black font-Roboto cursor-pointer" @click="() => { isOpen = false; changeLocalePath() }">繁中/EN</a>
       </li>
     </ul>
   </header>
@@ -51,21 +51,37 @@ export default defineNuxtComponent({
   setup() {
     const isOpen = useSidebarOpen()
     const sidebar = ref(null)
-    const { locale } = useI18n()
-    onMounted(() => {
-    })
-
-    onUnmounted(() => {
-    })
+    const { locale, setLocale } = useI18n()
+    const localePath = useLocalePath();
+    const route = useRoute()
 
     const handleHamburgerClick = () => {
       isOpen.value = !isOpen.value
     }
+
+    const changeLocalePath = async() => {
+      if (locale.value === 'EN') {
+        await setLocale('ZH-HANT')
+      } else {
+        await setLocale('EN')
+      }
+
+      await navigateTo(localePath(route.path).toLowerCase())
+    }
+
+    const textColor = computed(() => {
+      const isPrivacy = route.path.includes('privacy-policy-of-user')
+      return isPrivacy ? 'text-black' : 'text-white'
+    })
+
     return {
       sidebar,
       isOpen,
       handleHamburgerClick,
-      locale
+      locale,
+      changeLocalePath,
+      localePath,
+      textColor
     }
   },
 })
