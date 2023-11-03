@@ -5,7 +5,7 @@
         <div class="flex flex-col gap-[24px] text-[16px] leading-[28px] text-black">
           <h2>{{ $t('privacy.title') }}</h2>
           <strong class="text-[20px]">Apple Store</strong>
-          <p>{{ $t('privacy.descrption') }}</p>
+          <p>{{ $t('privacy.description') }}</p>
         
           <h3>{{ $t('privacy.first.title') }}</h3>
           <p>{{ $t('privacy.first.phase_1') }}</p>
