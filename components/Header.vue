@@ -15,7 +15,7 @@
         <li>
           <a :class="`${textColor} text-[22px] font-Inter`" :href="`${localePath('/').toLocaleLowerCase()}#about`">{{ $t('about.nav') }}</a>
         </li>
-        <li>
+        <li v-if="!isPrivacy" >
           <a :class="`${textColor} text-[22px] font-Inter cursor-pointer`" @click="changeLocalePath">{{ $t('about.changeLang') }}</a>
         </li>
       </ul>
@@ -39,7 +39,7 @@
       <li class="py-[20px] pl-[10px]">
         <a class="text-[20px] leading-[36px] text-black font-Roboto" :href="`${localePath('/').toLocaleLowerCase()}#about`" @click="isOpen = false">{{ $t('about.nav') }}</a>
       </li>
-      <li class="py-[20px] pl-[10px]">
+      <li v-if="!isPrivacy" class="py-[20px] pl-[10px]">
         <a class="text-[20px] leading-[36px] text-black font-Roboto cursor-pointer" @click="() => { isOpen = false; changeLocalePath() }">繁中/EN</a>
       </li>
     </ul>
@@ -69,9 +69,12 @@ export default defineNuxtComponent({
       await navigateTo(localePath(route.path).toLowerCase())
     }
 
+    const isPrivacy = computed(() => {
+      return route.path.includes('privacy-policy-of-user') || route.path.includes('privacy') || route.path.includes('terms')
+    })
+
     const textColor = computed(() => {
-      const isPrivacy = route.path.includes('privacy-policy-of-user')
-      return isPrivacy ? 'text-black' : 'text-white'
+      return isPrivacy.value ? 'text-black' : 'text-white'
     })
 
     return {
@@ -81,7 +84,8 @@ export default defineNuxtComponent({
       locale,
       changeLocalePath,
       localePath,
-      textColor
+      textColor,
+      isPrivacy
     }
   },
 })

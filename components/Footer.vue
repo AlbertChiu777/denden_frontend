@@ -1,7 +1,7 @@
 <template>
   <footer class="w-full bg-[#0A5BE2] pt-[58px] sm:pt-[74px] pb-[32px]">
     <p class="text-center text-white text-[12px] leading-[24px]">
-      Copyright © 2023 DENDEN INC. <br class="sm:hidden"/>All Rights Reserved.   <br class="sm:hidden"/> <a :href="localePath('privacy-policy-of-user').toLocaleLowerCase()">隱私權政策・服務條款</a>
+      Copyright © 2023 DENDEN INC. <br class="sm:hidden"/>All Rights Reserved.   <br class="sm:hidden"/> <a href="/zh-hant/privacy">隱私權政策</a>・<a href="/zh-hant/terms">服務條款</a>
     </p>
   </footer>
 </template>
